@@ -5,25 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cicle extends Model
+class Modul extends Model
 {
     use HasFactory;
 
-    protected $table = 'cicles';
+    protected $table = 'moduls';
     protected $primaryKey = 'id';
     //public $incrementing = false
     //protected $keyType = 'string';
     public $timestamps = false;
 
-    /**
-     * Get all of the cursos for the Cicle
-     *
-     * @return \Illuminate\DatCursloquent\Relations\HasMany
-     */
     public function cursos()
     {
-        return $this->hasMany(Cursos::class, 'cicles_id');
+        return $this->belongsToMany(Cursos::class, 'moduls_has_cursos', 'moduls_id', 'cursos_id')->withPivot('curs_academic_id');
     }
-
-
 }

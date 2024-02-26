@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cicle;
+use App\Models\Modul;
 use Illuminate\Http\Request;
 
-class CicleController extends Controller
+class ModulController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $cicles = Cicle::all();
-
-        return view('cicles.index',compact('cicles'));
+        //
     }
 
     /**
@@ -36,17 +34,15 @@ class CicleController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Cicle $cicle)
+    public function show(Modul $modul)
     {
-        $cicles = Cicle::where('id', 1)->get();
-
-        return view('cicles.index',compact('cicles'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Cicle $cicle)
+    public function edit(Modul $modul)
     {
         //
     }
@@ -54,7 +50,7 @@ class CicleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Cicle $cicle)
+    public function update(Request $request, Modul $modul)
     {
         //
     }
@@ -62,7 +58,7 @@ class CicleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Cicle $cicle)
+    public function destroy(Modul $modul)
     {
         //
     }
